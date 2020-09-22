@@ -1,9 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@500;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap");
+
+:root {
+  --base: 1rem;
+  --text: #ce5493;
+  --dark: #b93ba7;
+  --contrast: #a78c92;
+  --bg: #eae9eb;
+  --white: white;
+  --highlight: #e15f72;
+}
 
 body {
-  background-color: papayawhip;
+  background-color: var(--bg);
   color: rgb(12, 1, 70);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Muli", sans-serif;
+  margin: 0;
+}
+strong {
+  font-weight: 800;
 }
 
 #box {
@@ -19,7 +34,85 @@ body {
   text-align: center;
 }
 
+.wave {
+  background-image: url(svg/wave.svg);
+  background-repeat: no-repeat;
+  background-position: inherit;
+  background-position-x: -20rem;
+  background-position-y: -3rem;
+  background-size: 150%;
+}
+
+ul > * {
+  padding-bottom: 1rem;
+}
+
+#root {
+  display: grid;
+}
+#root > * {
+  display: grid;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+main {
+  grid-template-columns: 1fr;
+}
+
+#right {
+  /* padding-top: 8rem; */
+}
+#skills {
+  /* padding-top: 4rem; */
+}
+
+#left {
+  padding: 2rem;
+}
+
+#left ul {
+  padding-left: 1rem;
+}
+
+.cl-preview-section {
+  padding: 1rem 0;
+}
+
 h1 {
-  color: #8c7150;
-  font-weight: bold;
+  font-size: calc(2 * var(--base));
+  font-weight: 900;
+  margin: 0;
+}
+h2 {
+  font-size: calc(1.7 * var(--base));
+  font-weight: 700;
+  border-bottom: 2px solid var(--contrast);
+  padding-bottom: var(--base);
+}
+h3 {
+  font-size: calc(1.2 * var(--base));
+  font-weight: 700;
+  display: inline;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+  font-family: "Inter";
+}
+a {
+  transition: color 0.3s ease-in-out;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--dark);
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 2fr;
+  }
 }

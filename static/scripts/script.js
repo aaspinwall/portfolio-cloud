@@ -6,8 +6,10 @@ const apiCall = async (url) => {
   const response = await fetch(url);
 
   console.log(response);
-  const body = await response.json();
-  console.log(body);
+  const { count } = await response.json();
+
+  const counter = document.querySelector("#counter");
+  counter.innerHTML = count;
 };
 
 const url = `https://d8xazeslzk.execute-api.us-east-1.amazonaws.com/Prod/hello`;

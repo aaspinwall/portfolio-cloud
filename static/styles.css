@@ -11,6 +11,12 @@
   --highlight: #e15f72;
 }
 
+.social {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 1rem;
+}
+
 body {
   background-color: var(--bg);
   color: rgb(12, 1, 70);

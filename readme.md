@@ -2,7 +2,7 @@
 
 This is what happens when you click on [alejandro.tech](http://alejandro.tech/)
 
-[Route 53](https://aws.amazon.com/route53/) routes your request to the HTML, CSS and JS files which live inside a [S3](https://aws.amazon.com/s3/) storage bucket. These are cached by [Cloudfront](https://aws.amazon.com/cloudfront/). That means there's **a copy of them across 200+ locations around **the world. So no matter if you connect from Singapore or France, you'll get the content as fast as possible.
+[Route 53](https://aws.amazon.com/route53/) routes your request to the HTML, CSS and JS files which live inside a [S3](https://aws.amazon.com/s3/) storage bucket. These are cached by [Cloudfront](https://aws.amazon.com/cloudfront/). That means there's **a copy of them across 200+ locations around** the world. So no matter if you connect from Singapore or France, you'll get the content as fast as possible.
 
 Remember, **the internet is a bunch of physically connected computers** exchanging information at (close to) the speed of light. Being closer to the information you want, means faster loading times.
 

@@ -2,25 +2,30 @@
 
 This is what happens when you click on [alejandro.tech](http://alejandro.tech/)
 
-[Route 53](https://aws.amazon.com/route53/) routes your request to the HTML, CSS and JS files you see live inside a [S3](https://aws.amazon.com/s3/) storage bucket. These are cached by [Cloudfront](https://aws.amazon.com/cloudfront/). That means there's a copy of them across 200+ locations around the world. So no matter if you connect from Singapore or France, you'll get the content as fast as possible.
+[Route 53](https://aws.amazon.com/route53/) routes your request to the HTML, CSS and JS files you see live inside a [S3](https://aws.amazon.com/s3/) storage bucket. These are cached by [Cloudfront](https://aws.amazon.com/cloudfront/). That means there's **a copy of them across 200+ locations around **the world. So no matter if you connect from Singapore or France, you'll get the content as fast as possible.
 
-Remember, the internet is a bunch of physically connected computers exchanging information at (close to) the speed of light. Being closer to the information you want, means faster loading times.
+Remember, **the internet is a bunch of physically connected computers** exchanging information at (close to) the speed of light. Being closer to the information you want, means faster loading times.
 
 Click [here](https://www.cloudping.info/) if you want to know what's the nearest AWS location to you.
 
 **Meanwhile on the client side**
 
-When you connect to the [site](http://alejandro.tech/) you trigger a serverless function.
+When you connect to the [site](http://alejandro.tech/) you trigger a [serverless function](https://aws.amazon.com/lambda/). This means that instead of having a server running 24/7 waiting for a request, **the function only exists on demand**.
 
 This function (written in Python because why not) queries my RDS database. It gets the visitor count, adds one and updates the table. The function returns the new value and displays it on the site.
 
 **Continuous Deployment**
-On Github, when I push changes to the main branch. They trigger an action that replaces the files in the S3 bucket and invalidates the cached files on Cloudfront. This means that the next time you connect, you'll get the latest version of the files.
 
-If you've ever deployed your site on a service like Netlify, this process is done auto-_magically_ for you. It's nice to have the option of doing it manually because it gives you freedom. It is a lot of work though. It's like going through the exhaustive process of making a late at home. Buying the beans, grinding them, weighing, working the espresso machine, frothing the milk and doing the latte art. You can also just get one from Starbucks and call it a day. Nothing wrong with one or the other, just depends on your needs.
+On Github, when I push changes to the main branch. They trigger an action that **replaces the files in the S3 bucket and invalidates the cached files on Cloudfront**. This means that the next time you connect, you'll get the latest version of the files.
+
+**But why?**
+
+If you've ever deployed your site on a service like Netlify, this process is done auto-_magically_ for you. **It's nice to have the option of doing it manually because it gives you freedom**. It is a lot of work though. It's like going through the exhaustive process of making a late at home. Buying the beans, grinding them, weighing, working the espresso machine, frothing the milk and doing the latte art. You can also just get one from Starbucks and call it a day. Nothing wrong with one or the other, just depends on your needs. ☕️
 
 **References**
 Thanks so much to [swyx](https://twitter.com/swyx) for suggesting the [cloud resume challenge](https://forrestbrazeal.com/2020/04/23/the-cloud-resume-challenge/). Going through it opened my mind to the world of cloud solutions. Now I use them for **everything**.
 
 PD: I set a concurrency limit on the lambda function. This means that even if somebody wants to troll me and spam the endpoint, it's limited to 5 requests per minute.
 Implementing security with [AWS Route 53](https://www.youtube.com/watch?v=lB4DTqMEumY)
+
+\- Alejandro 🧡

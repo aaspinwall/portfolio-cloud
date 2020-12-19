@@ -14,7 +14,7 @@
 .social {
   display: flex;
   gap: 2rem;
-  padding: 1rem 0;
+  padding: 0;
 }
 
 body {
@@ -35,7 +35,7 @@ strong {
   );
 
   color: var(--bg);
-  padding: 2rem 2rem 1rem;
+  padding: 1rem 2rem 1rem;
   margin: 0;
   display: flex;
   flex-flow: column;

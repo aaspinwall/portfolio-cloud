@@ -8,7 +8,7 @@ const apiCall = async (url) => {
   console.log(response);
   const { count } = await response.json();
 
-  const counter = document.querySelector("#counter");
+  const counter = document.querySelector("#count");
   counter.innerHTML = count;
 };
 

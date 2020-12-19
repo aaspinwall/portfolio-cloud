@@ -14,7 +14,7 @@
 .social {
   display: flex;
   gap: 2rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 body {
@@ -35,7 +35,11 @@ strong {
   );
 
   color: var(--bg);
-  padding: 1rem 2rem;
+  padding: 2rem 2rem 1rem;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
 }
 
 #box {
@@ -68,19 +72,22 @@ ul > * {
   display: grid;
 }
 
-#root > * {
+#root > header,
+main {
   display: grid;
   width: 100%;
   max-width: 900px;
   margin: auto;
 }
+
 header {
-  margin: 1rem;
+  margin: 1.5rem;
 }
 header > * {
   max-width: 100%;
   margin: 0 1rem;
 }
+
 main {
   grid-template-columns: 1fr;
   grid-template-areas: "left" "right";
@@ -107,6 +114,9 @@ main > * {
 .cl-preview-section {
   padding: 1rem 0;
 }
+.bold {
+  font-weight: bold;
+}
 
 h1 {
   font-size: calc(2 * var(--base));
@@ -114,7 +124,7 @@ h1 {
   margin: 0;
 }
 h2 {
-  font-size: calc(1.7 * var(--base));
+  font-size: calc(1.2 * var(--base));
   font-weight: 700;
   border-bottom: 2px solid var(--contrast);
   padding-bottom: var(--base);
